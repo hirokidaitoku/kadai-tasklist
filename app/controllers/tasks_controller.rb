@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :destroy, :update]
   
   def index
-    @tasks = Task.all
+    @tasks = Task.page(params[:page]).per(10)
   end
   def show
   end
