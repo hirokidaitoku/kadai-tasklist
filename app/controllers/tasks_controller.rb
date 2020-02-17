@@ -9,6 +9,7 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
   end
+  
   def create
     @task =Task.new(task_params)
     if @task.save
@@ -19,8 +20,10 @@ class TasksController < ApplicationController
       render :new
     end
   end
+  
   def edit
   end
+  
   def update
     if @task.update(task_params)
       flash[:success] = "Task は正常に更新されました"
@@ -30,6 +33,7 @@ class TasksController < ApplicationController
       render :edit
     end
   end
+  
   def destroy
     @task.destroy
     
