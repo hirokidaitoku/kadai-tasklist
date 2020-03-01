@@ -1,7 +1,7 @@
 <h1>タスク管理</h1>
 
 <% if logged_in? %>
-  <p>ユーザー名<%= current_user.name %></p>
+  <p>ユーザー名:<%= current_user.name %></p>
 
   <% if @tasks.any? %>
     <table class="table table-striped">
@@ -25,6 +25,8 @@
     <div class="mb-2">
       <%= paginate @tasks %>
     </div>
+  <% else %>
+    <p>タスクはありません。</p>
   <% end %>
 
 <% else %>
